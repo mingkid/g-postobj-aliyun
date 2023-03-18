@@ -13,7 +13,7 @@ type Policy struct {
 
 func (p *Policy) MarshalJSON() ([]byte, error) {
 	return json.Marshal(map[string]any{
-		"expiration": p.Expiration.Format(time.RFC3339),
+		"expiration": p.Expiration.Format("2006-01-02T15:04:05Z"),
 		"conditions": p.Conditions,
 	})
 }
